@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     [SerializeField] private List<PoolableMono> poolObj = new List<PoolableMono>();
     [SerializeField] private int poolCount = 0;
 
