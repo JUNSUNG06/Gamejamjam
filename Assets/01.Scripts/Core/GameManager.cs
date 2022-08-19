@@ -18,4 +18,9 @@ public class GameManager : MonoBehaviour
             PoolManager.Instance.CreatePool(item, poolCount);
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
