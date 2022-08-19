@@ -19,7 +19,6 @@ public void SetTextData(){
             int.TryParse(words[0], out idx);
             textDic.Add(idx, words[0]);
             for(int j=0; j < words.Length; j++){
-                
             }
         }
     }
