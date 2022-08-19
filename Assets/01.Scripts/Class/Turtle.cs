@@ -1,12 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Turtle
+[System.Serializable]
+public class Turtle : MonoBehaviour
 {
-    public char _grade;
-    public string _name;
-    public int _helth;
-    public string _des;
-    public int _price;
-    public int _prob;
+    [SerializeField]char _grade;
+    string _name;
+    int _helth;
+    string _des;
+    int _price;
+    int _prob;
+    public string Name{get => _name;}
+    public Turtle(string grade, string name, int helth, string des, int price, int prob){
+
+    }
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
 }
