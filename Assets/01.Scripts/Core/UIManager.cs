@@ -24,8 +24,8 @@ public class UIManager : MonoBehaviour
 
         fadeImgaeTrm = canvasTrm.Find("FadeImage").GetComponent<RectTransform>();
         optionUITrm = canvasTrm.Find("Option").GetComponent<RectTransform>();
-        cookUITrm = canvasTrm.Find("Cook").GetComponent<RectTransform>();
-        sellUITrm = canvasTrm.Find("Sell").GetComponent<RectTransform>();
+        cookUITrm = canvasTrm.Find("Inventory/Cook").GetComponent<RectTransform>();
+        sellUITrm = canvasTrm.Find("Inventory/Sell").GetComponent<RectTransform>();
     }
 
     public void ExitUI()
