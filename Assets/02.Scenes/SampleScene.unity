@@ -423,6 +423,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71975673}
   m_CullTransparentMesh: 1
+--- !u!1 &131453330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131453331}
+  - component: {fileID: 131453332}
+  m_Layer: 5
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &131453331
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131453330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 792207893}
+  - {fileID: 723493276}
+  m_Father: {fileID: 893072180}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &131453332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131453330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2798fcb554cb15b43b1915e1670c852a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookImage: []
+  sellImage: []
 --- !u!1 &137643369
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +506,7 @@ RectTransform:
   m_Children:
   - {fileID: 470785647}
   m_Father: {fileID: 893072180}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -567,6 +619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookTurtleList: []
+  imagePos: []
+  player: {fileID: 0}
 --- !u!114 &174702962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,6 +1696,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
     catchTime: 10
+    oliveimgae: {fileID: 6584624454734166015, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
   - grade: 0
     turtleName: Hawksbill
     health: 27
@@ -1652,6 +1707,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: 1c67c71d5f79974409ebff6d7db67f6b, type: 3}
     catchTime: 9
+    oliveimgae: {fileID: 6584624454734166015, guid: 1c67c71d5f79974409ebff6d7db67f6b, type: 3}
   - grade: 1
     turtleName: Caretta
     health: 24
@@ -1663,6 +1719,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: dfcaa6ae26bbfc14aaeab6e291bab6e6, type: 3}
     catchTime: 8
+    oliveimgae: {fileID: 6584624454734166015, guid: dfcaa6ae26bbfc14aaeab6e291bab6e6, type: 3}
   - grade: 1
     turtleName: Leaterback
     health: 21
@@ -1672,6 +1729,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: f659251fe3817c0439333b570b34ecb4, type: 3}
     catchTime: 7
+    oliveimgae: {fileID: 6584624454734166015, guid: f659251fe3817c0439333b570b34ecb4, type: 3}
   - grade: 1
     turtleName: Chelonia
     health: 18
@@ -1681,6 +1739,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: f14a99c6768633e418df3f04bd64679d, type: 3}
     catchTime: 6
+    oliveimgae: {fileID: 6584624454734166015, guid: f14a99c6768633e418df3f04bd64679d, type: 3}
   - grade: 2
     turtleName: Sardine
     health: 5
@@ -1689,6 +1748,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: 570cbe3410d8bb547a00066785694f40, type: 3}
     catchTime: 5
+    oliveimgae: {fileID: 6584624454734166015, guid: 570cbe3410d8bb547a00066785694f40, type: 3}
   - grade: 2
     turtleName: Scomber
     health: 15
@@ -1697,6 +1757,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: 466bb35e7e0745645b486336995608b7, type: 3}
     catchTime: 5
+    oliveimgae: {fileID: 6584624454734166015, guid: 466bb35e7e0745645b486336995608b7, type: 3}
   - grade: 3
     turtleName: Book
     health: 9
@@ -1704,6 +1765,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: b22117a195a473b4699d9c779c284c45, type: 3}
     catchTime: 3
+    oliveimgae: {fileID: 6584624454734166015, guid: b22117a195a473b4699d9c779c284c45, type: 3}
   - grade: 3
     turtleName: Shoes
     health: 9
@@ -1715,6 +1777,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: c03e0f5d8e7c43446beec4f6bee28dc3, type: 3}
     catchTime: 3
+    oliveimgae: {fileID: 6584624454734166015, guid: c03e0f5d8e7c43446beec4f6bee28dc3, type: 3}
   - grade: 3
     turtleName: Bottle
     health: 9
@@ -1726,6 +1789,7 @@ MonoBehaviour:
     sellPrice: 100
     turtleImgae: {fileID: 740097463369882635, guid: 3b4dcc84f23259749b6c723aac2df087, type: 3}
     catchTime: 3
+    oliveimgae: {fileID: 6584624454734166015, guid: 3b4dcc84f23259749b6c723aac2df087, type: 3}
   touchZoon: {fileID: 572738621}
   maxZoonPos: {x: -0.1, y: -3.5}
   minZoonPos: {x: -8, y: -5}
@@ -1737,6 +1801,7 @@ MonoBehaviour:
     sellPrice: 0
     turtleImgae: {fileID: 0}
     catchTime: 0
+    oliveimgae: {fileID: 0}
   isFishing: 0
   turtleHp: 0
 --- !u!4 &366510493
@@ -2716,9 +2781,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
-  cookTurtleList: []
-  sellTurtleList: []
-  cookInventory: {fileID: 1940460390}
   anim: {fileID: 0}
 --- !u!95 &632445822
 Animator:
@@ -2839,14 +2901,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723493275}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 174702960}
   - {fileID: 780945261}
-  m_Father: {fileID: 893072180}
-  m_RootOrder: 5
+  m_Father: {fileID: 131453331}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3200,13 +3262,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792207892}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1940460387}
-  m_Father: {fileID: 893072180}
-  m_RootOrder: 4
+  m_Father: {fileID: 131453331}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3496,9 +3558,8 @@ RectTransform:
   - {fileID: 1319011600}
   - {fileID: 1564931288}
   - {fileID: 317268087}
-  - {fileID: 792207893}
-  - {fileID: 723493276}
   - {fileID: 137643370}
+  - {fileID: 131453331}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5389,6 +5450,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookTurtleList: []
+  imagePos: []
+  player: {fileID: 0}
 --- !u!1 &1987758416
 GameObject:
   m_ObjectHideFlags: 0

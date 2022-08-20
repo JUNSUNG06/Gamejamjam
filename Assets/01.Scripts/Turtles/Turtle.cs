@@ -25,6 +25,8 @@ public class Turtle
     public int sellPrice; 
     public Image turtleImgae = null;
     public int catchTime;
+
+    public OliveImage oliveimgae;
      
 
     public Turtle(Garde _grade, string _turtleName, int _health, string _description, int _sellPrice, int _catchTime)

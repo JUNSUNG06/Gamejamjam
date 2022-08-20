@@ -92,7 +92,6 @@ public class Fishing : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             turtleHp--;
-            Debug.Log("asd");
         }
 
         if(turtleHp == 0 && currentFishingTime < fishingTurtle.catchTime)
@@ -103,7 +102,8 @@ public class Fishing : MonoBehaviour
             Debug.Log("성공");
             isFishing = false;
             currentFishingTime = 0;
-            GameObject.Find("Player").GetComponent<Player>().AddFish(fishingTurtle);
+            PoolableMono obj = PoolManager.Instance.Pop(fishingTurtle.oliveimgae.name);
+            Inventory.Instance.CookAdd(obj.GetComponent<OliveImage>());
         }
         if(turtleHp > 0 && currentFishingTime >= fishingTurtle.catchTime)
         {
