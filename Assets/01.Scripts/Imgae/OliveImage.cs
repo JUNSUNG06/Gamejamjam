@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class OliveImage : PoolableMono, IPointerClickHandler
@@ -9,7 +10,13 @@ public class OliveImage : PoolableMono, IPointerClickHandler
     private bool isButtonActive = false;
     public bool cooked = false;
     public int index;
+    public Image cookedImage;
+    Slider slider;
     
+    private void Awake() 
+    {
+        slider = transform.GetChild(1).GetComponent<Slider>();
+    }
 
     private void OnEnable() 
     {
@@ -27,6 +34,8 @@ public class OliveImage : PoolableMono, IPointerClickHandler
             GameObject.Find("Player").GetComponent<Player>().DeleteFish(index);
             transform.SetParent(GameManager.Instance.transform);
             PoolManager.Instance.Push(this);
+            slider.value = 0;
+            slider.gameObject.SetActive(false);
             cooked = false;
         }
     }
