@@ -9,6 +9,8 @@ using UnityEngine.Events;
 public class Fishing : MonoBehaviour
 {
     [SerializeField] UnityEvent[] Event;
+    [SerializeField] AudioClip getItem;
+    [SerializeField] AudioClip failFish;
     [SerializeField] private List<Turtle> turtles = new List<Turtle>();
     [SerializeField] private GameObject touchZoon; 
     [SerializeField] private Vector2 maxZoonPos;
@@ -84,7 +86,6 @@ public class Fishing : MonoBehaviour
 
     private void Fishingg()
     {
-        Debug.Log("낚시 중");
         
         currentFishingTime += Time.deltaTime;
 
@@ -96,7 +97,9 @@ public class Fishing : MonoBehaviour
 
         if(turtleHp == 0 && currentFishingTime < fishingTurtle.catchTime)
         {
+           
             Event[0]?.Invoke();
+            SoundManager.Instance.SetSound(getItem);
             Debug.Log("성공");
             isFishing = false;
             currentFishingTime = 0;
@@ -105,6 +108,7 @@ public class Fishing : MonoBehaviour
         if(turtleHp > 0 && currentFishingTime >= fishingTurtle.catchTime)
         {
             Event[1]?.Invoke();
+            SoundManager.Instance.SetSound(failFish);
             Debug.Log("실패");
             currentFishingTime = 0;
             isFishing = false;
