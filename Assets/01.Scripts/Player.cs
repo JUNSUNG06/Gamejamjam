@@ -23,15 +23,10 @@ public class Player : MonoBehaviour
         cookTurtleList.Add(turtle);
         cookInventory.AddFish(cookTurtleList.Count - 1, turtle);
     }
-<<<<<<< Updated upstream
-    public void StartFishing(){
-        anim.SetTrigger("isCatch");
-=======
-
+    
     public void DeleteFish(int index)
     {
         cookTurtleList.RemoveAt(index);
         cookInventory.DeleteFish(index);
->>>>>>> Stashed changes
     }
 }
