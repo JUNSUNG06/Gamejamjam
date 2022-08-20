@@ -14,12 +14,10 @@ public class Fishing : MonoBehaviour
     [SerializeField] private Turtle fishingTurtle = null;
     [SerializeField] private bool isFishing = false;
     [SerializeField] int turtleHp = 0;
-
-    private float currentFishingTime = 0;
     
     private void Start() 
     {
-        SetTouchZoon();
+        StartCoroutine(f());
     }
 
     private void Update() 
@@ -32,6 +30,7 @@ public class Fishing : MonoBehaviour
 
     private void SetTouchZoon()
     {
+        touchZoon.SetActive(false);
         touchZoon.transform.position = new Vector2(UnityEngine.Random.Range(minZoonPos.x, maxZoonPos.x), 
             UnityEngine.Random.Range(minZoonPos.y, maxZoonPos.y));
             touchZoon.SetActive(true);
@@ -83,6 +82,8 @@ public class Fishing : MonoBehaviour
     private void Fishingg()
     {
         Debug.Log("낚시 중");
+        float currentFishingTime = 0;
+        
         currentFishingTime += Time.deltaTime;
 
         if(Input.GetMouseButtonDown(0))
@@ -91,16 +92,25 @@ public class Fishing : MonoBehaviour
             Debug.Log("asd");
         }
 
-        if(turtleHp == 0 && currentFishingTime < fishingTurtle.time)
+        if(turtleHp == 0 && currentFishingTime < fishingTurtle.catchTime)
         {
             Debug.Log("성공");
             isFishing = false;
-            GameObject.Find("Player").GetComponent<Player>().turtleList.Add(fishingTurtle);
+            GameObject.Find("Player").GetComponent<Player>().AddFish(fishingTurtle);
         }
-        else if(turtleHp != 0 && currentFishingTime >= fishingTurtle.time)
+        else if(turtleHp != 0 && currentFishingTime >= fishingTurtle.catchTime)
         {
             Debug.Log("실패");
             isFishing = false;
+        }
+    }
+
+    private IEnumerator f()
+    {
+        while (true)
+        {
+            SetTouchZoon();
+            yield return new WaitForSeconds(10);
         }
     }
 }
