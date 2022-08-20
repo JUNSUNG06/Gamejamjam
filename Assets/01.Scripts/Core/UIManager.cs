@@ -7,6 +7,7 @@ using DG.Tweening;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance = null;
+    
 
     private RectTransform canvasTrm = null;
     private RectTransform fadeImgaeTrm = null;
