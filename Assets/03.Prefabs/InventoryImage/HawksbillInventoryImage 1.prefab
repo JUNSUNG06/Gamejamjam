@@ -516,7 +516,8 @@ MonoBehaviour:
   cookTime: 3
   cooked: 0
   index: 0
-  cookedImage: {fileID: 0}
+  cookedImage: {fileID: 21300000, guid: b731f5ad5ede2a14cb18f082be04e3cf, type: 3}
+  defaultImage: {fileID: 21300000, guid: 7c2b9a67f592a1f409d3ce1a3740d724, type: 3}
 --- !u!1 &9093793282544774686
 GameObject:
   m_ObjectHideFlags: 0

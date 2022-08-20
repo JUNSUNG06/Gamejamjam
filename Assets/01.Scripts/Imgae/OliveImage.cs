@@ -10,12 +10,23 @@ public class OliveImage : PoolableMono, IPointerClickHandler
     private bool isButtonActive = false;
     public bool cooked = false;
     public int index;
-    public Image cookedImage;
+    public Sprite cookedImage;
+    public Sprite defaultImage;
+    public bool etc;
     Slider slider;
     
     private void Awake() 
     {
         slider = transform.GetChild(1).GetComponent<Slider>();
+    }
+
+    private void Update() 
+    {
+        if(cooked)
+        {
+            this.GetComponent<Image>().sprite = cookedImage;
+            slider.gameObject.SetActive(false);
+        }
     }
 
     private void OnEnable() 
@@ -33,10 +44,10 @@ public class OliveImage : PoolableMono, IPointerClickHandler
         {
             GameObject.Find("Player").GetComponent<Player>().DeleteFish(index);
             transform.SetParent(GameManager.Instance.transform);
-            PoolManager.Instance.Push(this);
             slider.value = 0;
-            slider.gameObject.SetActive(false);
+            this.GetComponent<Image>().sprite = defaultImage;
             cooked = false;
+            PoolManager.Instance.Push(this);
         }
     }
 
@@ -48,5 +59,14 @@ public class OliveImage : PoolableMono, IPointerClickHandler
     public void StartCook()
     {
         CookManager.Instance.StartCook(this);
+        if(etc)
+        {
+            GameObject.Find("Player").GetComponent<Player>().DeleteFish(index);
+            transform.SetParent(GameManager.Instance.transform);
+            slider.value = 0;
+            this.GetComponent<Image>().sprite = defaultImage;
+            cooked = false;
+            PoolManager.Instance.Push(this);
+        }
     }
 }
