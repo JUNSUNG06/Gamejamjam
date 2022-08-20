@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
+    public static GameManager Instance = null;
     [SerializeField] private List<PoolableMono> poolObj = new List<PoolableMono>();
     [SerializeField] private int poolCount = 0;
 
     private void Awake() 
     {   
+        if(Instance == null)
+        {
+            Instance = this;
+        }
         PoolManager.Instance = new PoolManager(this.transform);
         SaveManager.Instance = new SaveManager();
         

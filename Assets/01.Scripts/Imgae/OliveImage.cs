@@ -8,6 +8,7 @@ public class OliveImage : PoolableMono, IPointerClickHandler
     public int cookTime;
     private bool isButtonActive = false;
     public bool cooked = false;
+    public int index;
     
 
     private void OnEnable() 
@@ -23,7 +24,10 @@ public class OliveImage : PoolableMono, IPointerClickHandler
         
         if(cooked)
         {
-            gameObject.SetActive(false);
+            GameObject.Find("Player").GetComponent<Player>().DeleteFish(index);
+            transform.SetParent(GameManager.Instance.transform);
+            PoolManager.Instance.Push(this);
+            cooked = false;
         }
     }
 
@@ -34,6 +38,6 @@ public class OliveImage : PoolableMono, IPointerClickHandler
 
     public void StartCook()
     {
-        StartCoroutine(CookManager.Instance.Cook(this));
+        CookManager.Instance.StartCook(this);
     }
 }

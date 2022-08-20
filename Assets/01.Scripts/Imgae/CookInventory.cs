@@ -21,6 +21,7 @@ public class CookInventory : MonoBehaviour
         for(int i = 0; i < cookTurtleList.Count; i++)
         {
             cookTurtleList[i].transform.position = imagePos[i].position;
+            cookTurtleList[i].GetComponent<OliveImage>().index = i;
         }
     }
 
@@ -33,6 +34,18 @@ public class CookInventory : MonoBehaviour
         if(imagePos.Count != 0)
         {
             cookTurtleList[cookTurtleList.Count - 1].transform.position = imagePos[cookTurtleList.Count - 1].position;
+            cookTurtleList[cookTurtleList.Count - 1].GetComponent<OliveImage>().index = cookTurtleList.Count - 1;
         }
+    }
+
+    public void DeleteFish(int index)
+    {
+        cookTurtleList.RemoveAt(index);
+        if(cookTurtleList.Count != 0)
+        {
+            cookTurtleList[cookTurtleList.Count - 1].transform.position = imagePos[cookTurtleList.Count - 1].position;
+            cookTurtleList[cookTurtleList.Count - 1].GetComponent<OliveImage>().index = cookTurtleList.Count - 1;
+        }
+        
     }
 }
