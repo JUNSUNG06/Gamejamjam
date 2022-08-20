@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private void Awake() 
     {   
         PoolManager.Instance = new PoolManager(this.transform);
+        SaveManager.Instance = new SaveManager();
         
         foreach(PoolableMono item in poolObj)
         {
