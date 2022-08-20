@@ -20,6 +20,6 @@ public class Player : MonoBehaviour
     public void AddFish(Turtle turtle)
     {
         cookTurtleList.Add(turtle);
-        cookInventory.AddFish(cookTurtleList.Count - 1, turtle.turtleImgae);
+        cookInventory.AddFish(cookTurtleList.Count - 1, turtle);
     }
 }

@@ -23,16 +23,17 @@ public class Turtle
     public int health;
     public string description; 
     public int sellPrice; 
-    public Image turtleImgae;
-    public int time;
+    public Image turtleImgae = null;
+    public int catchTime;
+     
 
-    public Turtle(Garde _grade, string _turtleName, int _health, string _description, int _sellPrice, int _time)
+    public Turtle(Garde _grade, string _turtleName, int _health, string _description, int _sellPrice, int _catchTime)
     {
         grade = _grade;
         turtleName = _turtleName;
         health = _health;
         description = _description;
         sellPrice = _sellPrice;
-        time = _time;
+        catchTime = _catchTime;
     }
 }

@@ -24,9 +24,9 @@ public class CookInventory : MonoBehaviour
         }
     }
 
-    public void AddFish(int index, Image turtleImgae)
+    public void AddFish(int index, Turtle turtle)
     {
-        PoolableMono image = PoolManager.Instance.Pop(turtleImgae.name);
+        PoolableMono image = PoolManager.Instance.Pop(turtle.turtleImgae.name);
         image.transform.SetParent(this.transform);
         cookTurtleList.Add(image);
 
