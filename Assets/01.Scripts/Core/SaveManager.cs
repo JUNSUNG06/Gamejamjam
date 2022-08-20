@@ -6,14 +6,14 @@ using UnityEngine;
 public class PlayerInfo
 {
     public int money; 
-    public List<Turtle> cookTurtleList = new List<Turtle>();
-    public List<Turtle> sellTurtleList = new List<Turtle>();
+    public List<OliveImage> cookImage = new List<OliveImage>();
+    public List<OliveImage> sellImage = new List<OliveImage>();
     
     public PlayerInfo(int _money)
     {
         money = _money;
-        cookTurtleList.Clear();
-        sellTurtleList.Clear();
+        cookImage.Clear();
+        sellImage.Clear();
     }
 }
 
