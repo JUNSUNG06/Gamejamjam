@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PlayerInfo
 {
     public int money; 
-    public List<Turtle> turtleList = new List<Turtle>();
+    public List<Turtle> cookTurtleList = new List<Turtle>();
+    public List<Turtle> sellTurtleList = new List<Turtle>();
     
     public PlayerInfo(int _money)
     {
         money = _money;
-        turtleList.Clear();
+        cookTurtleList.Clear();
+        sellTurtleList.Clear();
     }
 }
 
