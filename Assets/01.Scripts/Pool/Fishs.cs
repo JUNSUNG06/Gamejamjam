@@ -12,6 +12,7 @@ public class Fishs : PoolableMono,IPointerClickHandler
 
     public override void Reset(Transform Trm)
     {
-        throw new System.NotImplementedException();
+
     }
 }
+   

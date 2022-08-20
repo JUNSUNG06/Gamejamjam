@@ -16,6 +16,7 @@ public class Fishing : MonoBehaviour
     [SerializeField] private Turtle fishingTurtle = null;
     [SerializeField] private bool isFishing = false;
     [SerializeField] int turtleHp = 0;
+    private float currentFishingTime = 0;
     
     private void Start() 
     {
@@ -84,7 +85,6 @@ public class Fishing : MonoBehaviour
     private void Fishingg()
     {
         Debug.Log("낚시 중");
-        float currentFishingTime = 0;
         
         currentFishingTime += Time.deltaTime;
 
@@ -99,12 +99,14 @@ public class Fishing : MonoBehaviour
             Event[0]?.Invoke();
             Debug.Log("성공");
             isFishing = false;
+            currentFishingTime = 0;
             GameObject.Find("Player").GetComponent<Player>().AddFish(fishingTurtle);
         }
-        else if(turtleHp != 0 && currentFishingTime >= fishingTurtle.catchTime)
+        if(turtleHp > 0 && currentFishingTime >= fishingTurtle.catchTime)
         {
             Event[1]?.Invoke();
             Debug.Log("실패");
+            currentFishingTime = 0;
             isFishing = false;
         }
     }

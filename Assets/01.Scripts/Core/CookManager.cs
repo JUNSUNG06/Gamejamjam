@@ -19,6 +19,11 @@ public class CookManager : MonoBehaviour
         }
     }
 
+    public void StartCook(OliveImage turtle)
+    {
+        StartCoroutine(Cook(turtle));
+    }
+
     public IEnumerator Cook(OliveImage turtle)
     {
         if(isActive1) { Cook2(turtle); }
