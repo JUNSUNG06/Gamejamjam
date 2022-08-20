@@ -1574,7 +1574,7 @@ MonoBehaviour:
       '\uB300\uBAA8 \uAC70\uBD81'\uC774\uB77C\uACE0 \uBD88\uB9B0\uB2E4,\uB2E4\uB978
       \uBC14\uB2E4\uAC70\uBD81\uBCF4\uB2E4 \uC721\uC2DD\uC131\uC774 \uAC15\uD558\uB2E4"
     sellPrice: 100
-    turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
+    turtleImgae: {fileID: 740097463369882635, guid: 1c67c71d5f79974409ebff6d7db67f6b, type: 3}
     catchTime: 9
   - grade: 1
     turtleName: Caretta
@@ -1585,7 +1585,7 @@ MonoBehaviour:
       \uC81C\uC678\uD558\uACE0\uB294 \uAC70\uC758 \uBB4D\uC73C\uB85C \uC62C\uB77C\uC624\uB294
       \uACBD\uC6B0\uAC00 \uC5C6\uB2E4"
     sellPrice: 100
-    turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
+    turtleImgae: {fileID: 740097463369882635, guid: dfcaa6ae26bbfc14aaeab6e291bab6e6, type: 3}
     catchTime: 8
   - grade: 1
     turtleName: Leaterback
@@ -1594,7 +1594,7 @@ MonoBehaviour:
       \uBAA8\uB4E0\uBC14\uB2E4 \uAC70\uBD81\uC911\uC5D0 \uAC00\uC7A5 \uD070 \uC885\uC774\uB2E4,\uC8FC\uB85C
       \uD574\uD30C\uB9B4\uB97C \uBA39\uC73C\uBA74\uC11C \uC0B4\uC544\uAC04\uB2E4."
     sellPrice: 100
-    turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
+    turtleImgae: {fileID: 740097463369882635, guid: f659251fe3817c0439333b570b34ecb4, type: 3}
     catchTime: 7
   - grade: 1
     turtleName: Chelonia
@@ -1603,7 +1603,7 @@ MonoBehaviour:
       \uD0DC\uD3C9\uC591 \uBD80\uADFC\uC5D0\uC11C \uAC70\uC8FC\uD55C\uB2E4.\uAC00\uC7A5
       \uC720\uBA85\uD55C \uBC14\uB2E4\uAC70\uBD81\uC774 \uAE30\uB3C4\uD558\uB2E4"
     sellPrice: 100
-    turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
+    turtleImgae: {fileID: 740097463369882635, guid: f14a99c6768633e418df3f04bd64679d, type: 3}
     catchTime: 6
   - grade: 2
     turtleName: Sardine
@@ -1611,7 +1611,7 @@ MonoBehaviour:
     description: "\uB9C8\uD2B8\uC5D0\uC11C \uC0B4\uC218\uC788\uB294 \uD3C9\uBC94\uD55C
       \uC2E0\uBC1C,\uACE0\uAE09\uBE0C\uB79C\uB4DC\uB294 \uC544\uB2CC\uAC83 \uAC19\uB2E4"
     sellPrice: 100
-    turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
+    turtleImgae: {fileID: 740097463369882635, guid: 570cbe3410d8bb547a00066785694f40, type: 3}
     catchTime: 5
   - grade: 2
     turtleName: Scomber
@@ -1619,14 +1619,14 @@ MonoBehaviour:
     description: "\uD3C9\uBC94\uD55C \uC4F0\uB808\uAE30 \uBCD1, \uC548\uCABD\uC5D0\uB294
       \uC0B4\uC9DD \uC54C\uCF54\uC62C \uB0C4\uC0C8\uAC00 \uB09C\uB2E4.."
     sellPrice: 100
-    turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
+    turtleImgae: {fileID: 740097463369882635, guid: 466bb35e7e0745645b486336995608b7, type: 3}
     catchTime: 5
   - grade: 3
     turtleName: Book
     health: 9
     description: "\uCC45\uC774\uB2E4....\uB9D0\uADF8\uB300\uB85C \uCC45\uC774\uB2E4...."
     sellPrice: 100
-    turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
+    turtleImgae: {fileID: 740097463369882635, guid: b22117a195a473b4699d9c779c284c45, type: 3}
     catchTime: 3
   - grade: 3
     turtleName: Shoes
@@ -1637,7 +1637,7 @@ MonoBehaviour:
       \uD615\uC131\uD558\uBA70 \uB300\uADDC\uBAA8\uB85C \uC774\uB3D9\uD558\uB294
       \uD2B9\uC9D5\uC774 \uC788\uB2E4"
     sellPrice: 100
-    turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
+    turtleImgae: {fileID: 740097463369882635, guid: c03e0f5d8e7c43446beec4f6bee28dc3, type: 3}
     catchTime: 3
   - grade: 3
     turtleName: Bottle
@@ -1648,7 +1648,7 @@ MonoBehaviour:
       \uBA78\uCE58 \uB610\uB294 \uC791\uC740 \uBB3C\uACE0\uAE30\uB97C \uC8FC \uBA39\uC774\uB85C
       \uC0BC\uB294\uB2E4"
     sellPrice: 100
-    turtleImgae: {fileID: 740097463369882635, guid: e94d6674451bccb4a90aa189c7c0ab59, type: 3}
+    turtleImgae: {fileID: 740097463369882635, guid: 3b4dcc84f23259749b6c723aac2df087, type: 3}
     catchTime: 3
   touchZoon: {fileID: 572738621}
   maxZoonPos: {x: 2.55, y: -2.85}
