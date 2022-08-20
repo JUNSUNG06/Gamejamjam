@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] public List<Turtle> cookTurtleList = new List<Turtle>();
     [SerializeField] public List<Turtle> sellTurtleList = new List<Turtle>();
     [SerializeField] private CookInventory cookInventory;
+    [SerializeField] private Animator anim;
 
 
     private void Start() 
@@ -21,5 +22,8 @@ public class Player : MonoBehaviour
     {
         cookTurtleList.Add(turtle);
         cookInventory.AddFish(cookTurtleList.Count - 1, turtle);
+    }
+    public void StartFishing(){
+        anim.SetTrigger("isCatch");
     }
 }
