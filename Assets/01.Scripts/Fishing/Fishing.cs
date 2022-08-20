@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 
 public class Fishing : MonoBehaviour
 {
+    [SerializeField] UnityEvent[] Event;
     [SerializeField] private List<Turtle> turtles = new List<Turtle>();
     [SerializeField] private GameObject touchZoon; 
     [SerializeField] private Vector2 maxZoonPos;
@@ -94,12 +96,14 @@ public class Fishing : MonoBehaviour
 
         if(turtleHp == 0 && currentFishingTime < fishingTurtle.catchTime)
         {
+            Event[0]?.Invoke();
             Debug.Log("성공");
             isFishing = false;
             GameObject.Find("Player").GetComponent<Player>().AddFish(fishingTurtle);
         }
         else if(turtleHp != 0 && currentFishingTime >= fishingTurtle.catchTime)
         {
+            Event[1]?.Invoke();
             Debug.Log("실패");
             isFishing = false;
         }

@@ -7,7 +7,7 @@ public class Fishs : PoolableMono,IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+
     }
 
     public override void Reset(Transform Trm)
