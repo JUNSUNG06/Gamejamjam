@@ -17,7 +17,7 @@ public class Fishing : MonoBehaviour
     
     private void Start() 
     {
-        SetTouchZoon();
+        StartCoroutine(f());
     }
 
     private void Update() 
@@ -30,6 +30,7 @@ public class Fishing : MonoBehaviour
 
     private void SetTouchZoon()
     {
+        touchZoon.SetActive(false);
         touchZoon.transform.position = new Vector2(UnityEngine.Random.Range(minZoonPos.x, maxZoonPos.x), 
             UnityEngine.Random.Range(minZoonPos.y, maxZoonPos.y));
             touchZoon.SetActive(true);
@@ -91,16 +92,25 @@ public class Fishing : MonoBehaviour
             Debug.Log("asd");
         }
 
-        if(turtleHp == 0 && currentFishingTime < fishingTurtle.time)
+        if(turtleHp == 0 && currentFishingTime < fishingTurtle.catchTime)
         {
             Debug.Log("성공");
             isFishing = false;
             GameObject.Find("Player").GetComponent<Player>().AddFish(fishingTurtle);
         }
-        else if(turtleHp != 0 && currentFishingTime >= fishingTurtle.time)
+        else if(turtleHp != 0 && currentFishingTime >= fishingTurtle.catchTime)
         {
             Debug.Log("실패");
             isFishing = false;
+        }
+    }
+
+    private IEnumerator f()
+    {
+        while (true)
+        {
+            SetTouchZoon();
+            yield return new WaitForSeconds(10);
         }
     }
 }

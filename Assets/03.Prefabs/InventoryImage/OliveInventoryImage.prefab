@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4219926263147220280}
   - component: {fileID: 3073084660252323174}
   - component: {fileID: 5234633036115009954}
-  - component: {fileID: 1430003941854124930}
+  - component: {fileID: 3249290143323613440}
   m_Layer: 5
   m_Name: CookButton
   m_TagString: Untagged
@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.9589, y: -10.1909}
-  m_SizeDelta: {x: 32.196, y: 14.3182}
+  m_AnchoredPosition: {x: 38.2989, y: -22.8022}
+  m_SizeDelta: {x: 64.0289, y: 21.5978}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3073084660252323174
 CanvasRenderer:
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1430003941854124930
+--- !u!114 &3249290143323613440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,41 +86,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 109712151220984977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 174a2aa0061f187499d76f6e776a9a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 5234633036115009954}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &3826990688340432334
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8457598880276115615
 RectTransform:
   m_ObjectHideFlags: 0
@@ -156,8 +124,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -10.191}
-  m_SizeDelta: {x: 28.9937, y: 3.6242}
+  m_AnchoredPosition: {x: 0.000002563, y: -30.438}
+  m_SizeDelta: {x: 47.0834, y: 6.3254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6615726928228260356
 MonoBehaviour:
@@ -243,7 +211,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -493,7 +461,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 19, y: 19}
+  m_SizeDelta: {x: 73, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &120812135694917727
 CanvasRenderer:
@@ -545,6 +513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501e6fad10dcacc4ea16a70392e5b5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cookTime: 3
+  cooked: 0
 --- !u!1 &9093793282544774686
 GameObject:
   m_ObjectHideFlags: 0
