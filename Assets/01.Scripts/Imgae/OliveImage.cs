@@ -7,46 +7,67 @@ using UnityEngine.EventSystems;
 public class OliveImage : PoolableMono, IPointerClickHandler
 {
     public int cookTime;
-    private bool isButtonActive = false;
     public bool cooked = false;
-    public int index;
-    public Image cookedImage;
+    public bool isProduct = false;
+    public Sprite cookedImage;
+    public Sprite defaultImage;
+    public bool etc;
+    private int price = 100;
+    public bool a = false;
     Slider slider;
     
     private void Awake() 
     {
-        slider = transform.GetChild(1).GetComponent<Slider>();
-    }
-
-    private void OnEnable() 
-    {
-        isButtonActive = false;
-        transform.GetChild(0).gameObject.SetActive(false);
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        isButtonActive = !isButtonActive;
-        transform.GetChild(0).gameObject.SetActive(isButtonActive);
-        
-        if(cooked)
-        {
-            GameObject.Find("Player").GetComponent<Player>().DeleteFish(index);
-            transform.SetParent(GameManager.Instance.transform);
-            PoolManager.Instance.Push(this);
-            slider.value = 0;
-            slider.gameObject.SetActive(false);
-            cooked = false;
-        }
+        slider = transform.GetChild(0).GetComponent<Slider>();
     }
 
     public override void Reset(Transform Trm)
     {
-        transform.position = Trm.position;
+        
     }
 
-    public void StartCook()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        CookManager.Instance.StartCook(this);
+        if(!a)
+        {Debug.Log(1);
+        if(etc)
+        {
+            Inventory.Instance.CookDelete(this);
+            PoolManager.Instance.Push(this);
+            SaveManager.Instance.playerInfo.money += price;
+
+            return;
+        }
+
+        if(isProduct)
+        {
+            SaveManager.Instance.playerInfo.money += price;
+            Inventory.Instance.SellDelete(this);
+            PoolManager.Instance.Push(this);
+            this.GetComponent<Image>().sprite = defaultImage;
+            transform.SetParent(GameManager.Instance.transform);
+            isProduct = false;
+
+            return;
+        }
+
+        if(cooked)
+        {
+            GoToSell();
+            return;
+        }
+
+        CookManager.Instance.StartCook(this);}
+    }
+
+    public void GoToSell()
+    {
+        SoundManager.Instance.SetSound(SoundManager.Instance.processingSound);
+        Inventory.Instance.CookDelete(this);
+        Inventory.Instance.SellAdd(this);
+        this.GetComponent<Image>().sprite = cookedImage;
+        slider.gameObject.SetActive(false);
+        isProduct = true;
+        cooked = false;
     }
 }

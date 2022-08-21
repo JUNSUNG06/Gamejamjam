@@ -6,18 +6,18 @@ using UnityEngine;
 public class PlayerInfo
 {
     public int money; 
-    public List<Turtle> cookTurtleList = new List<Turtle>();
-    public List<Turtle> sellTurtleList = new List<Turtle>();
+    public List<OliveImage> cookImage = new List<OliveImage>();
+    public List<OliveImage> sellImage = new List<OliveImage>();
     
     public PlayerInfo(int _money)
     {
         money = _money;
-        cookTurtleList.Clear();
-        sellTurtleList.Clear();
+        cookImage.Clear();
+        sellImage.Clear();
     }
 }
 
-public class SaveManager 
+public class SaveManager
 {
     public static SaveManager Instance = null;
 
@@ -36,6 +36,14 @@ public class SaveManager
         {
             playerInfo = JsonUtility.FromJson<PlayerInfo>(playerjson);
         }
+    }
+
+    public void Save()
+    {
+        playerInfo.cookImage = Inventory.Instance.cookImage;
+        playerInfo.sellImage = Inventory.Instance.sellImage;
+        
+        PlayerPrefs.SetString("player", JsonUtility.ToJson(playerInfo));
     }
 
     private void Update() 

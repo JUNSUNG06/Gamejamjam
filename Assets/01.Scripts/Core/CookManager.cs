@@ -28,7 +28,8 @@ public class CookManager : MonoBehaviour
     {
         if(isActive1) { Cook2(turtle); }
 
-        Slider slider = turtle.transform.GetChild(1).GetComponent<Slider>();
+        turtle.a = true;
+        Slider slider = turtle.transform.GetChild(0).GetComponent<Slider>();
         float currentTime = 0;     
 
         isActive1 = true;
@@ -46,13 +47,15 @@ public class CookManager : MonoBehaviour
         currentTime = 0;
         turtle.cooked = true;
         isActive1 = false;
+        turtle.a = false;
     }
 
     private void Cook2(OliveImage turtle)
     {
         if(isActive2) { Cook3(turtle); }
 
-        Slider slider = turtle.transform.GetChild(1).GetComponent<Slider>();
+        turtle.a = true;
+        Slider slider = turtle.transform.GetChild(0).GetComponent<Slider>();
         float currentTime = 0;
 
         isActive2 = true;
@@ -67,6 +70,7 @@ public class CookManager : MonoBehaviour
         currentTime = 0;
         turtle.cooked = true;
         isActive2 = false;
+        turtle.a = false;
     }
 
     private void Cook3(OliveImage turtle)
@@ -77,7 +81,8 @@ public class CookManager : MonoBehaviour
             return;
         }
         
-        Slider slider = turtle.transform.GetChild(1).GetComponent<Slider>();
+        turtle.a = true;
+        Slider slider = turtle.transform.GetChild(0).GetComponent<Slider>();
         float currentTime = 0;
 
         isActive3 = true;
@@ -92,5 +97,6 @@ public class CookManager : MonoBehaviour
         currentTime = 0;
         turtle.cooked = true;
         isActive3 = false;
+        turtle.a = false;
     }
 }
