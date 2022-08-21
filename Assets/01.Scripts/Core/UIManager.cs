@@ -19,9 +19,12 @@ public class UIManager : MonoBehaviour
 
     private bool UIActive = false;
     private RectTransform ActiveUI = null;
+    private Text failTxt;
+    private Text successTxt;
 
     private void Awake() 
     {
+        UIManager.Instance = this;
         canvasTrm = GameObject.Find("Canvas").GetComponent<RectTransform>();
 
         fadeImgaeTrm = canvasTrm.Find("FadeImage").GetComponent<RectTransform>();
@@ -33,6 +36,8 @@ public class UIManager : MonoBehaviour
 
     private void Update() {
         priceText.text = $"{SaveManager.Instance.playerInfo.money}";
+        failTxt = canvasTrm.Find("FailTxt").GetComponent<Text>();
+        successTxt = canvasTrm.Find("SuccessTxt").GetComponent<Text>();
     }
 
     public void ExitUI()
@@ -59,5 +64,33 @@ public class UIManager : MonoBehaviour
         
         ActiveUI.gameObject.SetActive(true);
         UIActive = true;
+
+    }
+    public void setFailText(){
+        StartCoroutine(SetFailText());
+    }
+    public void setSuccessText(){
+        StartCoroutine(SetSuccessText());
+    }
+    IEnumerator SetFailText(){
+        Sequence seq = DOTween.Sequence();
+        failTxt.transform.position = new Vector3(failTxt.transform.position.x,failTxt.transform.position.y +100, 0);
+        failTxt.gameObject.SetActive(true);
+        seq.Append(failTxt.transform.DOMove(new Vector3(failTxt.transform.position.x,failTxt.transform.position.y -100,0), 0.2f));
+        yield return new WaitForSeconds(0.2f);
+        seq.Append(failTxt.transform.DOMove(new Vector3(failTxt.transform.position.x,failTxt.transform.position.y +10,0), 0.1f));
+        yield return new WaitForSeconds(0.1f);
+        seq.Append(failTxt.transform.DOMove(new Vector3(failTxt.transform.position.x,failTxt.transform.position.y -10,0), 0.1f));
+        yield return new WaitForSeconds(0.3f);
+        failTxt.gameObject.SetActive(false);
+    }
+    IEnumerator SetSuccessText(){
+        Sequence seq = DOTween.Sequence();
+        successTxt.gameObject.SetActive(true);
+        seq.Append(successTxt.transform.DOScale(new Vector3(1.5f,1.5f,0), 0.2f));
+        yield return new WaitForSeconds(0.2f);
+        seq.Append(successTxt.transform.DOScale(new Vector3(0.7f,0.7f,0), 0.2f));
+        yield return new WaitForSeconds(0.5f);
+        successTxt.gameObject.SetActive(false);
     }
 }

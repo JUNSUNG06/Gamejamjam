@@ -55,6 +55,7 @@ public class OliveImage : PoolableMono, IPointerClickHandler
 
     public void GoToSell()
     {
+        SoundManager.Instance.SetSound(SoundManager.Instance.processingSound);
         Inventory.Instance.CookDelete(this);
         Inventory.Instance.SellAdd(this);
         this.GetComponent<Image>().sprite = cookedImage;

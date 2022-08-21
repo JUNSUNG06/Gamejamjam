@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance = null;
     [SerializeField] private List<PoolableMono> poolObj = new List<PoolableMono>();
     [SerializeField] private int poolCount = 0;
+    public AudioClip[] a;
 
     private void Awake() 
     {   
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        SoundManager.Instance = new SoundManager(a);
         PoolManager.Instance = new PoolManager(this.transform);
         SaveManager.Instance = new SaveManager();
         
