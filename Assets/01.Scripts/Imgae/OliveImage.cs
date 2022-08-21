@@ -13,6 +13,7 @@ public class OliveImage : PoolableMono, IPointerClickHandler
     public Sprite defaultImage;
     public bool etc;
     private int price = 100;
+    public bool a = false;
     Slider slider;
     
     private void Awake() 
@@ -27,21 +28,27 @@ public class OliveImage : PoolableMono, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(1);
+        if(!a)
+        {Debug.Log(1);
         if(etc)
         {
             Inventory.Instance.CookDelete(this);
             PoolManager.Instance.Push(this);
             SaveManager.Instance.playerInfo.money += price;
+
+            return;
         }
 
         if(isProduct)
         {
+            SaveManager.Instance.playerInfo.money += price;
             Inventory.Instance.SellDelete(this);
             PoolManager.Instance.Push(this);
             this.GetComponent<Image>().sprite = defaultImage;
             transform.SetParent(GameManager.Instance.transform);
-            SaveManager.Instance.playerInfo.money += price;
+            isProduct = false;
+
+            return;
         }
 
         if(cooked)
@@ -50,7 +57,7 @@ public class OliveImage : PoolableMono, IPointerClickHandler
             return;
         }
 
-        CookManager.Instance.StartCook(this);
+        CookManager.Instance.StartCook(this);}
     }
 
     public void GoToSell()
@@ -59,6 +66,7 @@ public class OliveImage : PoolableMono, IPointerClickHandler
         Inventory.Instance.CookDelete(this);
         Inventory.Instance.SellAdd(this);
         this.GetComponent<Image>().sprite = cookedImage;
+        slider.gameObject.SetActive(false);
         isProduct = true;
         cooked = false;
     }

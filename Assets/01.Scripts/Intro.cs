@@ -12,7 +12,7 @@ public class Intro : MonoBehaviour
     {
         if(Input.anyKeyDown)
         {
-            image.DOMoveY(0, 1.5f).SetEase(Ease.Linear).OnComplete(() => SceneManager.LoadScene("SampleScene"));
+            image.DOMoveY(0, 3f).SetEase(Ease.Linear).OnComplete(() => SceneManager.LoadScene("SampleScene"));
         }
     }
 }
