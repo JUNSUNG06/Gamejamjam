@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour
     private RectTransform optionUITrm = null;
     private RectTransform cookUITrm = null;
     private RectTransform sellUITrm = null;
+    private TextMeshProUGUI priceText;
 
     private bool UIActive = false;
     private RectTransform ActiveUI = null;
@@ -26,6 +28,11 @@ public class UIManager : MonoBehaviour
         optionUITrm = canvasTrm.Find("Option").GetComponent<RectTransform>();
         cookUITrm = canvasTrm.Find("Inventory/Cook").GetComponent<RectTransform>();
         sellUITrm = canvasTrm.Find("Inventory/Sell").GetComponent<RectTransform>();
+        priceText = canvasTrm.Find("Image/PriceText").GetComponent<TextMeshProUGUI>();
+    }
+
+    private void Update() {
+        priceText.text = $"{SaveManager.Instance.playerInfo.money}";
     }
 
     public void ExitUI()

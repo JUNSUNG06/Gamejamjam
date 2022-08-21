@@ -17,7 +17,7 @@ public class PlayerInfo
     }
 }
 
-public class SaveManager 
+public class SaveManager
 {
     public static SaveManager Instance = null;
 
@@ -36,6 +36,14 @@ public class SaveManager
         {
             playerInfo = JsonUtility.FromJson<PlayerInfo>(playerjson);
         }
+    }
+
+    public void Save()
+    {
+        playerInfo.cookImage = Inventory.Instance.cookImage;
+        playerInfo.sellImage = Inventory.Instance.sellImage;
+        
+        PlayerPrefs.SetString("player", JsonUtility.ToJson(playerInfo));
     }
 
     private void Update() 
