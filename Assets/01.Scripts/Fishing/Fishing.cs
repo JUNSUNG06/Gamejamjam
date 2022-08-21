@@ -99,6 +99,7 @@ public class Fishing : MonoBehaviour
            
             Event[0]?.Invoke();
             SoundManager.Instance.SetSound(getItem);
+            UIManager.Instance.setSuccessText();
             Debug.Log("성공");
             isFishing = false;
             currentFishingTime = 0;
@@ -109,6 +110,7 @@ public class Fishing : MonoBehaviour
         {
             Event[1]?.Invoke();
             SoundManager.Instance.SetSound(failFish);
+            UIManager.Instance.setFailText();
             Debug.Log("실패");
             currentFishingTime = 0;
             isFishing = false;
